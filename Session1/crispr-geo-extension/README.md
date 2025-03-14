@@ -26,10 +26,6 @@ This Chrome extension analyzes NCBI GEO datasets to determine if they are CRISPR
    - Explanation of the determination
    - Related CRISPR terms found
 
-## Security Note
-
-The extension includes an OpenAI API key. For security reasons, you should replace it with your own API key in the `background.js` file.
-
 ## Dependencies
 
 - Chrome Browser
