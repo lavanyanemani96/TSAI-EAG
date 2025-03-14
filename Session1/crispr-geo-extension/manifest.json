@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "CRISPR GEO Analyzer",
+  "version": "1.0",
+  "description": "Analyzes GEO pages for CRISPR screen data",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.ncbi.nlm.nih.gov/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.ncbi.nlm.nih.gov/*"],
+      "js": ["js/content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  }
+} 

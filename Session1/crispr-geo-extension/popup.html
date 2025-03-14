@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRISPR GEO Analyzer</title>
+    <style>
+        body {
+            width: 400px;
+            padding: 15px;
+            font-family: Arial, sans-serif;
+        }
+        .result-container {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+        }
+        .loading {
+            text-align: center;
+            color: #666;
+        }
+        .status {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .confidence {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .explanation {
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+        .terms {
+            margin-top: 10px;
+            color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <h2>CRISPR GEO Analyzer</h2>
+    <div id="loading" class="loading">
+        Analyzing page content...
+    </div>
+    <div id="result" class="result-container" style="display: none;">
+        <div id="status" class="status"></div>
+        <div id="confidence" class="confidence"></div>
+        <div id="explanation" class="explanation"></div>
+        <div id="terms" class="terms"></div>
+    </div>
+    <script src="js/popup.js"></script>
+</body>
+</html> 
