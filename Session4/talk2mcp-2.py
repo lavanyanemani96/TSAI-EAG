@@ -82,7 +82,7 @@ async def main():
                 print("Requesting tool list...")
                 tools_result = await session.list_tools()
                 tools = tools_result.tools
-                print(tools)
+                # print(tools)
                 print(f"Successfully retrieved {len(tools)} tools")
 
                 # Create system prompt with available tools
