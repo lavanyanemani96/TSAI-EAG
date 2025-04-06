@@ -11,13 +11,12 @@ from functools import partial
 load_dotenv()
 
 # Access your API key and initialize Gemini client correctly
-api_key = "AIzaSyB9ETihKR24ZK874mTYHVRro5Gqw4WBJmU"
 
-# api_key = os.getenv("GEMINI_API_KEY")
+api_key = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel("gemini-2.0-flash")
 
-max_iterations = 6
+max_iterations = 10
 last_response = None
 iteration = 0
 iteration_response = []
@@ -142,12 +141,13 @@ You must respond with EXACTLY ONE line in one of these formats (no additional te
 
 Important:
 - When a function returns multiple values, you need to process all of them
-- After all the calculations you need to display the result in pinta by opening pinta, drawing a rectangle and writing the answer as text.
+- After all the calculations you need email the results and then display the result in pinta by opening pinta, drawing a rectangle and writing the answer as text.
 - Only give FINISHED_JOB when you have completed all necessary calculations and steps. 
 - Do not repeat function calls with the same parameters
 
 Examples:
 - FUNCTION_CALL: add|5|3
+- FUNCTION_CALL: email_result|result
 - FUNCTION_CALL: open_pinta
 - FUNCTION_CALL: draw_rectangle_in_pinta|780|380|1140|700
 - FUNCTION_CALL: add_text_in_pinta|800|400|result
@@ -157,7 +157,7 @@ DO NOT include any explanations or additional text.
 Your entire response should be a single line starting with either FUNCTION_CALL: or FINISHED_JOB:"""
 
                 # query = """Find the ASCII values of characters in INDIA and then display the sum of exponentials of those values. """
-                query = """Find the ASCII values of characters in 'INDIA'. Calculate the sum of their exponentials. Once done, display the result by opening Pinta, drawing a rectangle, and writing the result as text inside the rectangle."""
+                query = """Find the ASCII values of characters in 'INDIA'. Calculate the sum of their exponentials. Once done, email the results and then display the result by opening Pinta, drawing a rectangle, and writing the result as text inside the rectangle."""
                 print("Starting iteration loop...")
                 
                 # Use global iteration variables

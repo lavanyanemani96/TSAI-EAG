@@ -161,6 +161,40 @@ def fibonacci_numbers(n: int) -> list:
     return fib_sequence[:n]
 
 
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+
+@mcp.tool()
+def email_result(result: str) -> str:
+    """Email result."""
+    smtp_server = 'smtp.gmail.com'
+    smtp_port = 587
+    sender_email = 'lavanyanemani96@gmail.com'
+    sender_password = os.getenv("GMAIL_APP_PASSWORD")  # Use an app password for Gmail
+
+    subject = "Exponential Sum Result"
+    body = f"The exponential sum of the ASCII values is: {result}"
+
+    recipient_email = "lavanyanemani96@gmail.com"
+    
+    msg = MIMEMultipart()
+    msg['From'] = sender_email
+    msg['To'] = recipient_email
+    msg['Subject'] = subject
+    msg.attach(MIMEText(body, 'plain'))
+
+    try:
+        with smtplib.SMTP(smtp_server, smtp_port) as server:
+            server.starttls()
+            server.login(sender_email, sender_password)
+            server.sendmail(sender_email, recipient_email, msg.as_string())
+        return f"Email successfully sent to {recipient_email}"
+    except Exception as e:
+        return f"Failed to send email: {e}"
+
+
 @mcp.tool()
 async def draw_rectangle(x1: int, y1: int, x2: int, y2: int) -> dict:
     """Draw a rectangle in Paint from (x1,y1) to (x2,y2)"""
