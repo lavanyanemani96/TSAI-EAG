@@ -17,7 +17,7 @@ api_key = "AIzaSyB9ETihKR24ZK874mTYHVRro5Gqw4WBJmU"
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel("gemini-2.0-flash")
 
-max_iterations = 3
+max_iterations = 6
 last_response = None
 iteration = 0
 iteration_response = []
@@ -82,6 +82,7 @@ async def main():
                 print("Requesting tool list...")
                 tools_result = await session.list_tools()
                 tools = tools_result.tools
+                print(tools)
                 print(f"Successfully retrieved {len(tools)} tools")
 
                 # Create system prompt with available tools
@@ -136,23 +137,27 @@ You must respond with EXACTLY ONE line in one of these formats (no additional te
 1. For function calls:
    FUNCTION_CALL: function_name|param1|param2|...
    
-2. For final answers:
-   FINAL_ANSWER: [number]
+2. For finishing job:
+   FINISHED_JOB: [boolean]
 
 Important:
 - When a function returns multiple values, you need to process all of them
-- Only give FINAL_ANSWER when you have completed all necessary calculations
+- After all the calculations you need to display the result in pinta by opening pinta, drawing a rectangle and writing the answer as text.
+- Only give FINISHED_JOB when you have completed all necessary calculations and steps. 
 - Do not repeat function calls with the same parameters
 
 Examples:
 - FUNCTION_CALL: add|5|3
-- FUNCTION_CALL: strings_to_chars_to_int|INDIA
-- FINAL_ANSWER: [42]
+- FUNCTION_CALL: open_pinta
+- FUNCTION_CALL: draw_rectangle_in_pinta|780|380|1140|700
+- FUNCTION_CALL: add_text_in_pinta|800|400|result
+
 
 DO NOT include any explanations or additional text.
-Your entire response should be a single line starting with either FUNCTION_CALL: or FINAL_ANSWER:"""
+Your entire response should be a single line starting with either FUNCTION_CALL: or FINISHED_JOB:"""
 
-                query = """Find the ASCII values of characters in INDIA and then return sum of exponentials of those values. """
+                # query = """Find the ASCII values of characters in INDIA and then display the sum of exponentials of those values. """
+                query = """Find the ASCII values of characters in 'INDIA'. Calculate the sum of their exponentials. Once done, display the result by opening Pinta, drawing a rectangle, and writing the result as text inside the rectangle."""
                 print("Starting iteration loop...")
                 
                 # Use global iteration variables
@@ -276,54 +281,36 @@ Your entire response should be a single line starting with either FUNCTION_CALL:
                             iteration_response.append(f"Error in iteration {iteration + 1}: {str(e)}")
                             break
 
-                    elif response_text.startswith("FINAL_ANSWER:"):
-                        print("\n=== Agent Execution Complete ===")
-                        # result = await session.call_tool("open_paint")
-                        result = await session.call_tool("open_pinta")
-                        print(result.content[0].text)
+                    # elif response_text.startswith("FINAL_ANSWER:"):
+                    #     print("\n=== Agent Execution Complete ===")
+                    #     # result = await session.call_tool("open_paint")
+                    #     result = await session.call_tool("open_pinta")
+                    #     print(result.content[0].text)
 
-                        # Wait longer for Paint to be fully maximized
-                        await asyncio.sleep(1.5)
-
-                        # # Draw a rectangle
-                        # result = await session.call_tool(
-                        #     "draw_rectangle",
-                        #     arguments={
-                        #         "x1": 780,
-                        #         "y1": 380,
-                        #         "x2": 1140,
-                        #         "y2": 700
-                        #     }
-                        # )
+                    #     # Wait longer for Paint to be fully maximized
+                    #     await asyncio.sleep(1.5)
                         
-                        result = await session.call_tool(
-                            "draw_rectangle_in_pinta",
-                            arguments={
-                                "x1": 780,
-                                "y1": 380,
-                                "x2": 1140,
-                                "y2": 700
-                            }
-                        )
-                        print(result.content[0].text)
-
-                        # # Draw rectangle and add text
-                        # result = await session.call_tool(
-                        #     "add_text_in_paint",
-                        #     arguments={
-                        #         "text": response_text
-                        #     }
-                        # )
-                        result = await session.call_tool(
-                            "add_text_in_pinta",
-                            arguments={
-                                "x": 800, 
-                                "y": 400,
-                                "text": response_text
-                            }
-                        )
-                        print(result.content[0].text)
-                        break
+                    #     result = await session.call_tool(
+                    #         "draw_rectangle_in_pinta",
+                    #         arguments={
+                    #             "x1": 780,
+                    #             "y1": 380,
+                    #             "x2": 1140,
+                    #             "y2": 700
+                    #         }
+                    #     )
+                    #     print(result.content[0].text)
+                        
+                    #     result = await session.call_tool(
+                    #         "add_text_in_pinta",
+                    #         arguments={
+                    #             "x": 800, 
+                    #             "y": 400,
+                    #             "text": response_text
+                    #         }
+                    #     )
+                    #     print(result.content[0].text)
+                    #     break
 
                     iteration += 1
 

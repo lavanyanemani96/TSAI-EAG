@@ -444,7 +444,7 @@ async def add_text_in_pinta(x: int, y: int, text: str) -> dict:
         time.sleep(0.3)
 
         # Type the text
-        subprocess.run(["xdotool", "type", text], env=env, check=True)
+        subprocess.run(["xdotool", "type", f'Answer: {text}'], env=env, check=True)
 
         return {
             "content": [
