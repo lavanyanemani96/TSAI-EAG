@@ -1,0 +1,110 @@
+Starting main execution...
+Establishing connection to MCP server...
+Connection established, creating session...
+Session created, initializing...
+Requesting tool list...
+Successfully retrieved 26 tools
+Creating system prompt...
+Number of tools: 26
+Added description for tool: 1. add(a: integer, b: integer) - Add two numbers
+Added description for tool: 2. add_list(l: array) - Add all numbers in a list
+Added description for tool: 3. subtract(a: integer, b: integer) - Subtract two numbers
+Added description for tool: 4. multiply(a: integer, b: integer) - Multiply two numbers
+Added description for tool: 5. divide(a: integer, b: integer) - Divide two numbers
+Added description for tool: 6. power(a: integer, b: integer) - Power of two numbers
+Added description for tool: 7. sqrt(a: integer) - Square root of a number
+Added description for tool: 8. cbrt(a: integer) - Cube root of a number
+Added description for tool: 9. factorial(a: integer) - factorial of a number
+Added description for tool: 10. log(a: integer) - log of a number
+Added description for tool: 11. remainder(a: integer, b: integer) - remainder of two numbers divison
+Added description for tool: 12. sin(a: integer) - sin of a number
+Added description for tool: 13. cos(a: integer) - cos of a number
+Added description for tool: 14. tan(a: integer) - tan of a number
+Added description for tool: 15. mine(a: integer, b: integer) - special mining tool
+Added description for tool: 16. create_thumbnail(image_path: string) - Create a thumbnail from an image
+Added description for tool: 17. strings_to_chars_to_int(string: string) - Return the ASCII values of the characters in a word
+Added description for tool: 18. int_list_to_exponential_sum(int_list: array) - Return sum of exponentials of numbers in a list
+Added description for tool: 19. fibonacci_numbers(n: integer) - Return the first n Fibonacci Numbers
+Added description for tool: 20. email_result(result: unknown) - 
+Added description for tool: 21. draw_rectangle(x1: integer, y1: integer, x2: integer, y2: integer) - Draw a rectangle in Paint from (x1,y1) to (x2,y2)
+Added description for tool: 22. add_text_in_paint(text: string) - Add text in Paint
+Added description for tool: 23. open_paint() - Open Microsoft Paint maximized on secondary monitor
+Added description for tool: 24. open_pinta() - Open Pinta and wait for it to load
+Added description for tool: 25. draw_rectangle_in_pinta() - 
+Added description for tool: 26. add_text_in_pinta(text: string) - 
+Successfully created tools description
+1. add(a: integer, b: integer) - Add two numbers
+2. add_list(l: array) - Add all numbers in a list
+3. subtract(a: integer, b: integer) - Subtract two numbers
+4. multiply(a: integer, b: integer) - Multiply two numbers
+5. divide(a: integer, b: integer) - Divide two numbers
+6. power(a: integer, b: integer) - Power of two numbers
+7. sqrt(a: integer) - Square root of a number
+8. cbrt(a: integer) - Cube root of a number
+9. factorial(a: integer) - factorial of a number
+10. log(a: integer) - log of a number
+11. remainder(a: integer, b: integer) - remainder of two numbers divison
+12. sin(a: integer) - sin of a number
+13. cos(a: integer) - cos of a number
+14. tan(a: integer) - tan of a number
+15. mine(a: integer, b: integer) - special mining tool
+16. create_thumbnail(image_path: string) - Create a thumbnail from an image
+17. strings_to_chars_to_int(string: string) - Return the ASCII values of the characters in a word
+18. int_list_to_exponential_sum(int_list: array) - Return sum of exponentials of numbers in a list
+19. fibonacci_numbers(n: integer) - Return the first n Fibonacci Numbers
+20. email_result(result: unknown) - 
+21. draw_rectangle(x1: integer, y1: integer, x2: integer, y2: integer) - Draw a rectangle in Paint from (x1,y1) to (x2,y2)
+22. add_text_in_paint(text: string) - Add text in Paint
+23. open_paint() - Open Microsoft Paint maximized on secondary monitor
+24. open_pinta() - Open Pinta and wait for it to load
+25. draw_rectangle_in_pinta() - 
+26. add_text_in_pinta(text: string) - 
+Created system prompt...
+Starting iteration loop...
+
+--- Iteration 1 ---
+Preparing to generate LLM response...
+Starting LLM generation...
+LLM generation completed
+FUNC_NAME, ARGUMNETS_FUNC strings_to_chars_to_int {'string': 'INDIA'}
+iteration_response=["In the 1 iteration you called strings_to_chars_to_int with {'string': 'INDIA'} parameters, and the function returned [73, 78, 68, 73, 65]."]
+
+--- Iteration 2 ---
+Preparing to generate LLM response...
+Starting LLM generation...
+LLM generation completed
+FUNC_NAME, ARGUMNETS_FUNC int_list_to_exponential_sum {'int_list': [73, 78, 68, 73, 65]}
+iteration_response=["In the 1 iteration you called strings_to_chars_to_int with {'string': 'INDIA'} parameters, and the function returned [73, 78, 68, 73, 65].", "In the 2 iteration you called int_list_to_exponential_sum with {'int_list': [73, 78, 68, 73, 65]} parameters, and the function returned [7.599822246093079e+33]."]
+
+--- Iteration 3 ---
+Preparing to generate LLM response...
+Starting LLM generation...
+LLM generation completed
+FUNC_NAME, ARGUMNETS_FUNC email_result {'result': 7.599822246093079e+33}
+iteration_response=["In the 1 iteration you called strings_to_chars_to_int with {'string': 'INDIA'} parameters, and the function returned [73, 78, 68, 73, 65].", "In the 2 iteration you called int_list_to_exponential_sum with {'int_list': [73, 78, 68, 73, 65]} parameters, and the function returned [7.599822246093079e+33].", "In the 3 iteration you called email_result with {'result': 7.599822246093079e+33} parameters, and the function returned [Email successfully sent to lavanyanemani96@gmail.com]."]
+
+--- Iteration 4 ---
+Preparing to generate LLM response...
+Starting LLM generation...
+LLM generation completed
+FUNC_NAME, ARGUMNETS_FUNC open_pinta None
+iteration_response=["In the 1 iteration you called strings_to_chars_to_int with {'string': 'INDIA'} parameters, and the function returned [73, 78, 68, 73, 65].", "In the 2 iteration you called int_list_to_exponential_sum with {'int_list': [73, 78, 68, 73, 65]} parameters, and the function returned [7.599822246093079e+33].", "In the 3 iteration you called email_result with {'result': 7.599822246093079e+33} parameters, and the function returned [Email successfully sent to lavanyanemani96@gmail.com].", 'In the 4 iteration you called open_pinta with None parameters, and the function returned [{"content": [{"type": "text", "text": "Pinta opened successfully", "annotations": null}]}].']
+
+--- Iteration 5 ---
+Preparing to generate LLM response...
+Starting LLM generation...
+LLM generation completed
+FUNC_NAME, ARGUMNETS_FUNC draw_rectangle_in_pinta None
+iteration_response=["In the 1 iteration you called strings_to_chars_to_int with {'string': 'INDIA'} parameters, and the function returned [73, 78, 68, 73, 65].", "In the 2 iteration you called int_list_to_exponential_sum with {'int_list': [73, 78, 68, 73, 65]} parameters, and the function returned [7.599822246093079e+33].", "In the 3 iteration you called email_result with {'result': 7.599822246093079e+33} parameters, and the function returned [Email successfully sent to lavanyanemani96@gmail.com].", 'In the 4 iteration you called open_pinta with None parameters, and the function returned [{"content": [{"type": "text", "text": "Pinta opened successfully", "annotations": null}]}].', 'In the 5 iteration you called draw_rectangle_in_pinta with None parameters, and the function returned [{"content": [{"type": "text", "text": "Rectangle outlined with paintbrush from (780,380) to (1140,700)", "annotations": null}]}].']
+
+--- Iteration 6 ---
+Preparing to generate LLM response...
+Starting LLM generation...
+LLM generation completed
+FUNC_NAME, ARGUMNETS_FUNC add_text_in_pinta {'text': '7.599822246093079e+33'}
+iteration_response=["In the 1 iteration you called strings_to_chars_to_int with {'string': 'INDIA'} parameters, and the function returned [73, 78, 68, 73, 65].", "In the 2 iteration you called int_list_to_exponential_sum with {'int_list': [73, 78, 68, 73, 65]} parameters, and the function returned [7.599822246093079e+33].", "In the 3 iteration you called email_result with {'result': 7.599822246093079e+33} parameters, and the function returned [Email successfully sent to lavanyanemani96@gmail.com].", 'In the 4 iteration you called open_pinta with None parameters, and the function returned [{"content": [{"type": "text", "text": "Pinta opened successfully", "annotations": null}]}].', 'In the 5 iteration you called draw_rectangle_in_pinta with None parameters, and the function returned [{"content": [{"type": "text", "text": "Rectangle outlined with paintbrush from (780,380) to (1140,700)", "annotations": null}]}].', 'In the 6 iteration you called add_text_in_pinta with {\'text\': \'7.599822246093079e+33\'} parameters, and the function returned [{"content": [{"type": "text", "text": "Text \\"7.599822246093079e+33\\" added at (800,400)", "annotations": null}]}].']
+
+--- Iteration 7 ---
+Preparing to generate LLM response...
+Starting LLM generation...
+LLM generation completed
