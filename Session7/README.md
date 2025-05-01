@@ -14,6 +14,7 @@ Imagine you're in some legal trouble, or just curious. The legal landscape is ha
 - `models.py` — Pydantic models for ensuring the right argumnet types are passed.  
 - `perception.py` — LLM first analyzes what it needs to do!
 - `tools.py` — Define all MCP tools accessible to the Agent. 
+- `FAISS.ipynb` — Jupyter Notebook to create the FAISS index
 - `README.md` — This documentation
 
 ## Usage
