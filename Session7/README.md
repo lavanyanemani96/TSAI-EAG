@@ -18,9 +18,9 @@ Imagine you're in some legal trouble, or just curious. The legal landscape is ha
 
 ## Usage
 - Run the agent 
-'''
+```
 python agent.py
-'''
+```
 - Enter your query and email when prompted. 
 - Edit paths.env with GEMINI_API_KEY (required for LLM access) and GMAIL_APP_PASSWORD (required to email answers)
 
