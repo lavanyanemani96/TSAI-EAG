@@ -103,13 +103,7 @@ async def main(user_input: str):
     log("agent", "Agent session complete.")
 
 if __name__ == "__main__":
-    # query = input("🧑 What legal advice do you require? → ")
-    # email_to = input("🧑 Email your answer to: → ")
-    query = "What is the criteria for being eligible for maternity leave in India?"
-    email_to = "lavanyanemani96@gmail.com"
+    query = input("🧑 What legal advice do you require? → ")
+    email_to = input("🧑 Email your answer to: → ")
     query = f"You are a law expert, your goal is to find relevant acts / judgements and inform the user about their query in a holistic manner. Provide as many relevant facts as possible. First email the answer to: {email_to}. Answer the query:{query}, in a summarized manner. "
     asyncio.run(main(query))
-    
-# "What is the criteria for being eligible for maternity leave in India?"
-# "What are some legal considerations to keep in mind in relation to organ transplant for a foriegn national living in India?"
-# Email to: lavanyanemani96@gmail.com
