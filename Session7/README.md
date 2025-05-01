@@ -24,7 +24,7 @@ python agent.py
 - Enter your query and email when prompted. 
 - Edit paths.env with GEMINI_API_KEY (required for LLM access) and GMAIL_APP_PASSWORD (required to email answers)
 
-## Documnets 
+## Documents 
 This work is partially private as I'm adding a large corpus of data and building a holistic Legal QnA tool. Example document is provided as: 
 ```
 ├── documents-v1
