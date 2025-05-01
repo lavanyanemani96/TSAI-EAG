@@ -78,7 +78,7 @@ def email_result(recipient_email:str, answer:str) -> str:
         return f"Failed to send email: {e}"
 
 @mcp.tool()
-def search_legal_documents(query: str) -> list[str]:
+def search_legal_documents(query: str) -> str:
     """Search for relevant content from collection of acts/judgements as legal documents"""
     index_path, meta_path = ensure_faiss_ready()
     mcp_log("SEARCH", f"Query: {query}")
@@ -92,9 +92,9 @@ def search_legal_documents(query: str) -> list[str]:
         for idx in I[0]:
             data = metadata[idx]
             results.append(data['text'])
-        return results
+        return " ".join(results) 
     except Exception as e:
-        return [f"ERROR: Failed to search: {str(e)}"]
+        return f"ERROR: Failed to search: {str(e)}"
 
 if __name__ == "__main__":
     print("STARTING")

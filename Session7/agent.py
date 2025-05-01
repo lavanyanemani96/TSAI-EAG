@@ -105,7 +105,7 @@ async def main(user_input: str):
 if __name__ == "__main__":
     query = input("🧑 What legal advice do you require? → ")
     email_to = input("🧑 Email your answer to: → ")
-    query = f"You are a law expert, your goal is to find relevant acts / judgements and inform the user about their query in a holistic manner. Provide as many relevant facts as possible. First email the answer to: {email_to}. Answer the query:{query}, in a summarized manner. "
+    query = f"You are a law expert, your goal is to find relevant acts / judgements and inform the user about their query in a holistic manner. Provide as many relevant facts as possible. You must also email the answer to: {email_to}. Answer the query:{query}, in a summarized manner. "
     asyncio.run(main(query))
 
 # query = "What are some legal considerations to keep in mind in relation to organ transplant for a foriegn national living in India?"
