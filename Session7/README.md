@@ -26,6 +26,7 @@ python agent.py
 
 ## Documnets 
 This work is partially private as I'm adding a large corpus of data and building a holistic Legal QnA tool. Example document is provided as: 
+```
 ├── documents-v1
 │   ├── content
 │   │   └── 1074_170197905.txt 
@@ -35,5 +36,5 @@ This work is partially private as I'm adding a large corpus of data and building
 │   ├── faiss_index.index
 │   ├── faiss_metadata.json
 │   └── info.txt
-
+```
 
